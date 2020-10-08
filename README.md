@@ -7,6 +7,8 @@
 ▶ cat mass.out | grep open | mass2nmap > mass2nmap.out
 
 ▶ IFS=$'\n'; for i in $(cat mass2nmap.out); do cmd="$i"; eval $cmd;done; unset IFS
+
+▶ cat *.gnmap | grep Port
 ```
 
 
