@@ -6,7 +6,7 @@
 ```
 ▶ cat mass.out | grep open | go run main.go >> mass2nmap.out
 
-▶ IFS=$'\n'; for i in $(cat mass2nmap.out); do echo "$i"; done; unset IFS
+▶ IFS=$'\n'; for i in $(cat mass2nmap.out); do cmd="$i"; eval $cmd;done; unset IFS
 ```
 
 
