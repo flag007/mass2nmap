@@ -31,13 +31,15 @@ func main() {
 
 
 	for ip, ports := range portsMap {
-		out := "nmap -sV " + ip + " -p" 
-		for _, port := range ports {
-			out = out + port + ","
+		if (len(ports)) <= 80 {
+			out := "nmap -sV " + ip + " -p" 
+			for _, port := range ports {
+				out = out + port + ","
+			}
+			out = strings.TrimRight(out, ",")
+			out = out + " -oA " + ip
+			fmt.Println(out)
 		}
-		out = strings.TrimRight(out, ",")
-		out = out + " -oA " + ip
-		fmt.Println(out)
 	}
 
 }
